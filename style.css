@@ -9,7 +9,7 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(245, 245, 245);
 }
 
 ul,
@@ -58,4 +58,10 @@ body {
   .reminder {
     height: 300px;
   }
+}
+
+.add-reminder {
+  position: relative;
+  top: 20px;
+  font-size: 20px;
 }

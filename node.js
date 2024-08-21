@@ -20,6 +20,7 @@ app.post('/write', (req, res) => {
 
     fs.writeFile(path.join(__dirname, 'a.json'), JSON.stringify(jsonArray), (err) => {
       if (err) return res.status(500).json({ error: 'Failed to write file' });
+      res.statusCode = 200
       res.json({ message: 'File written successfully' });
     });
   });
@@ -35,3 +36,11 @@ app.get('/read', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
+// setInterval(() => {
+//   let date = new Date()
+//   let hours = date.getHours()
+//   let minutes = date.getMinutes()
+//   let time = `${hours}:${minutes}`
+
+// }, 60000);

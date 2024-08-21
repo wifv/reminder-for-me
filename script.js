@@ -1,4 +1,3 @@
-const post = document.getElementById('post');
 const reminderSection = document.getElementById('reminder-section');
 const reminderElement =
 `
@@ -24,25 +23,3 @@ fetch('http://localhost:3000/read', {
     }
   });
 
-post.addEventListener('submit', event => {
-  event.preventDefault();
-
-  const formData = new FormData(post);
-  const formDataObj = Object.fromEntries(formData.entries());
-
-  fetch('http://localhost:3000/write', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(formDataObj)
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      alert(data);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-});
