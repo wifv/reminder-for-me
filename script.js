@@ -22,4 +22,3 @@ fetch('http://localhost:3000/read', {
       reminderSection.children[i].lastElementChild.innerText = data[i].time
     }
   });
-
